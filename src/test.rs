@@ -4,6 +4,9 @@ mod tests {
     fn digits() {
         use crate::digit_to_text;
         assert_eq!(digit_to_text(9).unwrap(), "nine");
+        assert_eq!(digit_to_text(3).unwrap(), "three");
+        assert_eq!(digit_to_text(7).unwrap(), "seven");
+        assert_eq!(digit_to_text(5).unwrap(), "five");
     }
     #[test]
     fn numbers() {
@@ -11,6 +14,7 @@ mod tests {
         assert_eq!(to_text(12345), "twelvethousandthreehundredfortyfive");
         assert_eq!(to_text(81123), "eightyonethousandonehundredtwentythree");
         assert_eq!(to_text(12), "twelve");
+        assert_eq!(to_text(2), "two");
     }
     #[test]
     fn tens() {

@@ -79,26 +79,30 @@ pub fn to_text(number: u32) -> String {
         .collect();
     let second_digit_array: [usize; 2] = [0, 3];
     let mut last: Option<u8> = None;
-    for (index, digit) in digits.iter().rev().enumerate() {
-        if second_digit_array.contains(&index) {
-            last = Some(digit.clone());
-            continue;
-        }
-        if let Some(last_digit) = last {
-            let mut buffer = String::new();
-            buffer.push_str(tens_place(digit.clone(), last_digit).unwrap().as_str());
-            if index > 2 {
-                buffer.push_str(place_value(0, index as u8).unwrap().as_str());
+    if digits.len() == 1 {
+        numtext.push_str(digit_to_text(*digits.last().unwrap()).unwrap().as_str());
+    } else {
+        for (index, digit) in digits.iter().rev().enumerate() {
+            if second_digit_array.contains(&index) {
+                last = Some(digit.clone());
+                continue;
             }
-            numtext.insert_str(0, buffer.as_str());
-            last = None;
-        } else {
-            numtext.insert_str(
-                0,
-                place_value(digit.clone(), index as u8 + 1)
-                    .unwrap()
-                    .as_str(),
-            )
+            if let Some(last_digit) = last {
+                let mut buffer = String::new();
+                buffer.push_str(tens_place(digit.clone(), last_digit).unwrap().as_str());
+                if index > 2 {
+                    buffer.push_str(place_value(0, index as u8).unwrap().as_str());
+                }
+                numtext.insert_str(0, buffer.as_str());
+                last = None;
+            } else {
+                numtext.insert_str(
+                    0,
+                    place_value(digit.clone(), index as u8 + 1)
+                        .unwrap()
+                        .as_str(),
+                )
+            }
         }
     }
     numtext
