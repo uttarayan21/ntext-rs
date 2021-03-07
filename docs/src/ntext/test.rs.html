@@ -30,6 +30,10 @@
 <span id="27">27</span>
 <span id="28">28</span>
 <span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">test</span>)]</span>
 <span class="kw">mod</span> <span class="ident">tests</span> {
@@ -44,10 +48,14 @@
     <span class="attribute">#[<span class="ident">test</span>]</span>
     <span class="kw">fn</span> <span class="ident">numbers</span>() {
         <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">to_text</span>;
+
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">to_text</span>(<span class="number">1</span>), <span class="string">&quot;one&quot;</span>);
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">to_text</span>(<span class="number">10</span>), <span class="string">&quot;ten&quot;</span>);
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">to_text</span>(<span class="number">100</span>), <span class="string">&quot;onehundred&quot;</span>);
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">to_text</span>(<span class="number">1000</span>), <span class="string">&quot;onethousand&quot;</span>);
         <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">to_text</span>(<span class="number">12345</span>), <span class="string">&quot;twelvethousandthreehundredfortyfive&quot;</span>);
         <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">to_text</span>(<span class="number">81123</span>), <span class="string">&quot;eightyonethousandonehundredtwentythree&quot;</span>);
         <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">to_text</span>(<span class="number">12</span>), <span class="string">&quot;twelve&quot;</span>);
-        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">to_text</span>(<span class="number">2</span>), <span class="string">&quot;two&quot;</span>);
     }
     <span class="attribute">#[<span class="ident">test</span>]</span>
     <span class="kw">fn</span> <span class="ident">tens</span>() {

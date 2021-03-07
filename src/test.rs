@@ -11,10 +11,14 @@ mod tests {
     #[test]
     fn numbers() {
         use crate::to_text;
+
+        assert_eq!(to_text(1), "one");
+        assert_eq!(to_text(10), "ten");
+        assert_eq!(to_text(100), "onehundred");
+        assert_eq!(to_text(1000), "onethousand");
         assert_eq!(to_text(12345), "twelvethousandthreehundredfortyfive");
         assert_eq!(to_text(81123), "eightyonethousandonehundredtwentythree");
         assert_eq!(to_text(12), "twelve");
-        assert_eq!(to_text(2), "two");
     }
     #[test]
     fn tens() {
