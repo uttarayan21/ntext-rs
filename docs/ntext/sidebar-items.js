@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["digit_to_text","Convert digit to text."],["to_text","Convert u32 to words in a string."]]});
