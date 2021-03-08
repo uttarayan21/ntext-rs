@@ -3,34 +3,26 @@ mod tests {
     #[test]
     fn digits() {
         use crate::digit_to_text;
-        assert_eq!(digit_to_text(9).unwrap(), "nine");
-        assert_eq!(digit_to_text(3).unwrap(), "three");
-        assert_eq!(digit_to_text(7).unwrap(), "seven");
-        assert_eq!(digit_to_text(5).unwrap(), "five");
+        assert_eq!(digit_to_text(9, false).unwrap(), "nine");
+        assert_eq!(digit_to_text(3, false).unwrap(), "three");
+        assert_eq!(digit_to_text(7, false).unwrap(), "seven");
+        assert_eq!(digit_to_text(5, false).unwrap(), "five");
+        assert_eq!(digit_to_text(5, true).unwrap(), "Five");
     }
     #[test]
     fn numbers() {
-        use crate::to_text_no_seperator as to_text;
-        assert_eq!(to_text(1), "one");
-        assert_eq!(to_text(10), "ten");
-        assert_eq!(to_text(100), "onehundred");
-        assert_eq!(to_text(1000), "onethousand");
-        assert_eq!(to_text(12345), "twelvethousandthreehundredfortyfive");
-        assert_eq!(to_text(81123), "eightyonethousandonehundredtwentythree");
-        assert_eq!(to_text(12), "twelve");
-    }
-    #[test]
-    fn numbers_seperator() {
-        use crate::to_text_with_seperator as to_text;
-        assert_eq!(to_text(103, "/"), "one/hundred/three");
-        assert_eq!(to_text(1000, "/"), "one/thousand");
+        use crate::to_text_fmt as to_text;
+        use crate::Formatting;
+        let fmt = &Formatting::none();
+        assert_eq!(to_text(1, fmt), "one");
+        assert_eq!(to_text(10, fmt), "ten");
+        assert_eq!(to_text(100, fmt), "onehundred");
+        assert_eq!(to_text(1000, fmt), "onethousand");
+        assert_eq!(to_text(12345, fmt), "twelvethousandthreehundredfortyfive");
         assert_eq!(
-            to_text(12345, "/"),
-            "twelve/thousand/three/hundred/forty/five"
+            to_text(81123, fmt),
+            "eightyonethousandonehundredtwentythree"
         );
-        assert_eq!(
-            to_text(651243, "/"),
-            "six/million/fifty/one/thousand/two/hundred/forty/three"
-        );
+        assert_eq!(to_text(12, fmt), "twelve");
     }
 }

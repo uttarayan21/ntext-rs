@@ -1,3 +1,3 @@
 var N = null;var sourcesIndex = {};
-sourcesIndex["ntext"] = {"name":"","files":["lib.rs","no_seperator.rs","seperator.rs","test.rs"]};
+sourcesIndex["ntext"] = {"name":"","files":["formatting.rs","lib.rs","numtext.rs","test.rs"]};
 createSourceSidebar();
