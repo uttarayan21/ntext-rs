@@ -73,6 +73,8 @@
 <span id="70">70</span>
 <span id="71">71</span>
 <span id="72">72</span>
+<span id="73">73</span>
+<span id="74">74</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="doccomment">//!```rust</span>
 <span class="doccomment">//!extern crate ntext;</span>
@@ -102,6 +104,8 @@
 <span class="kw">mod</span> <span class="ident">test</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">no_seperator</span>::<span class="ident">to_text_no_seperator</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">seperator</span>::<span class="ident">to_text_with_seperator</span>;
+
+<span class="doccomment">/// Convert digit to words in a string.</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">digit_to_text</span>(<span class="ident">digit</span>: <span class="ident">u8</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">String</span><span class="op">&gt;</span> {
     <span class="kw">match</span> <span class="ident">digit</span> {
         <span class="number">0</span> <span class="op">=</span><span class="op">&gt;</span> <span class="prelude-val">Some</span>(<span class="string">&quot;&quot;</span>.<span class="ident">to_string</span>()),
