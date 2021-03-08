@@ -3,5 +3,10 @@ name = "ntext"
 version = "0.2.0"
 authors = ["Uttarayan Mondal <uttarayan21@gmail.com>"]
 edition = "2018"
+description = "A rust library to write numbers as words"
+readme = "README.md"
+documentation = "https://uttarayan21.github.io/ntext-rs"
+repository = "https://github.com/uttarayan21/ntext-rs"
+license-file = "LICENSE"
+publish = false
 
-[dependencies]

@@ -20,12 +20,10 @@ extern crate ntext;
 use ntext::to_text;
 fn main() {
     println!("{}",to_text!(12345));
-    println!("{}",to_text!(12345," "));
 }
 ```
 
 which should output  
-`twelvethousandthreehundredfortyfive`  
-`twelve thousand three hundred forty five`
+`twelvethousandthreehundredfortyfive`
 
-I will probably add formatting the text later
+Check the [documentation](https://uttarayan21.github.io/ntext-rs) which has more examples and is usually up to date.
