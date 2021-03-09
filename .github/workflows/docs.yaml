@@ -22,17 +22,17 @@ jobs:
                   override: true
             - name: Build Docs
               run: cargo doc --color=always
-            - name: Copy docs 
-              run: |
-                  mv docs/index.html ./
-                  rm -rf docs
-                  cp -r target/doc ./docs
-                  mv index.html docs/
-            - name: Push changes
+            - name: Copy docs and push
               run: |
                   git config --global user.name 'github-actions[bot]'
                   git config --global user.email 'github-actions[bot]@users.noreply.github.com'
                   git checkout gh-pages
-                  git add docs
+
                   git commit -am "Generated docs from github-actions[bot]"
+
+                  rm -rf docs
+                  cp -r target/doc ./docs
+                  cp index.html docs/
+
+                  git add docs
                   git push
