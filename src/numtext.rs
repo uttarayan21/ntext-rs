@@ -139,7 +139,7 @@ fn tens_place(tens: u8, ones: u8, fmt: &Formatting) -> Option<String> {
 pub fn to_text_fmt(number: usize, fmt: &Formatting) -> String {
     let mut numtext: String = String::new();
     let mut last: Option<u8> = None;
-    let tens_place_holders: [u8; 2] = [2, 5];
+    let tens_place_holders: [u8; 3] = [2, 5, 7];
     let digits: Vec<u8> = number
         .to_string()
         .chars()
