@@ -25,4 +25,19 @@ mod tests {
         );
         assert_eq!(to_text(12, fmt), "twelve");
     }
+    #[test]
+    fn numbers_formatting() {
+        use crate::to_text_fmt as to_text;
+        use crate::Formatting;
+        let fmt = &Formatting::default();
+        assert_eq!(to_text(1, fmt), "One");
+        assert_eq!(to_text(10, fmt), "Ten");
+        assert_eq!(to_text(100, fmt), "One Hundred");
+        assert_eq!(to_text(1000, fmt), "One Thousand");
+        assert_eq!(to_text(12315, fmt), "Twelve Thousand,Three Hundred,Fifteen");
+        assert_eq!(
+            to_text(1235245, fmt),
+            "Twelve Million,Thirty-Five Thousand,Two Hundred,Forty-Five"
+        );
+    }
 }

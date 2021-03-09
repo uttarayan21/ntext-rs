@@ -162,7 +162,7 @@ pub fn to_text_fmt(number: usize, fmt: &Formatting) -> String {
         if let Some(last_digit) = last {
             numtext.push_str(tens_place(last_digit, *digit, fmt).unwrap().as_str());
             if place > 2 {
-                if let Some(sep) = fmt.digit_seperator {
+                if let Some(sep) = fmt.place_seperator {
                     numtext.push_str(sep);
                 }
                 numtext.push_str(place_value(0, place, fmt).unwrap().as_str());
