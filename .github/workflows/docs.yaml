@@ -30,11 +30,10 @@ jobs:
                   git config --global user.email 'github-actions[bot]@users.noreply.github.com'
                   git checkout gh-pages
 
-                  git commit -am "Generated docs from github-actions[bot]"
-
                   rm -rf docs
                   cp -r target/doc ./docs
                   cp index.html docs/
 
+                  git commit -am "Generated docs from github-actions[bot]"
                   git add docs
                   git push
