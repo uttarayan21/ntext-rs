@@ -14,9 +14,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
               with:
-                  ref: |
-                      master
-                      gh-pages
+                  fetch-depth: 0
 
             - name: Install latest toolchain
               uses: actions-rs/toolchain@v1
