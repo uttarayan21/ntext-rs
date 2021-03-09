@@ -29,6 +29,21 @@
 <span id="26">26</span>
 <span id="27">27</span>
 <span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
+<span id="37">37</span>
+<span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
+<span id="43">43</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">test</span>)]</span>
 <span class="kw">mod</span> <span class="ident">tests</span> {
@@ -56,6 +71,21 @@
             <span class="string">&quot;eightyonethousandonehundredtwentythree&quot;</span>
         );
         <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">to_text</span>(<span class="number">12</span>, <span class="ident">fmt</span>), <span class="string">&quot;twelve&quot;</span>);
+    }
+    <span class="attribute">#[<span class="ident">test</span>]</span>
+    <span class="kw">fn</span> <span class="ident">numbers_formatting</span>() {
+        <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">to_text_fmt</span> <span class="kw">as</span> <span class="ident">to_text</span>;
+        <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">Formatting</span>;
+        <span class="kw">let</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">Formatting</span>::<span class="ident">default</span>();
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">to_text</span>(<span class="number">1</span>, <span class="ident">fmt</span>), <span class="string">&quot;One&quot;</span>);
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">to_text</span>(<span class="number">10</span>, <span class="ident">fmt</span>), <span class="string">&quot;Ten&quot;</span>);
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">to_text</span>(<span class="number">100</span>, <span class="ident">fmt</span>), <span class="string">&quot;One Hundred&quot;</span>);
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">to_text</span>(<span class="number">1000</span>, <span class="ident">fmt</span>), <span class="string">&quot;One Thousand&quot;</span>);
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">to_text</span>(<span class="number">12315</span>, <span class="ident">fmt</span>), <span class="string">&quot;Twelve Thousand,Three Hundred,Fifteen&quot;</span>);
+        <span class="macro">assert_eq</span><span class="macro">!</span>(
+            <span class="ident">to_text</span>(<span class="number">1235245</span>, <span class="ident">fmt</span>),
+            <span class="string">&quot;Twelve Million,Thirty-Five Thousand,Two Hundred,Forty-Five&quot;</span>
+        );
     }
 }
 </pre></div>
