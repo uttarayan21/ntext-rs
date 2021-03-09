@@ -17,7 +17,7 @@ jobs:
             - name: Install latest toolchain
               uses: actions-rs/toolchain@v1
               with:
-                  toolchain:stable
+                  toolchain: stable
                   default: true
                   override: true
             - name: Build Docs
