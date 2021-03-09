@@ -1,5 +1,4 @@
-//! Example program with default formatting
-//! Source [ntext-rs](https://github.com/uttarayan21/ntext-rs)
+//! Example program with default formatting  
 //!```rust
 //!extern crate ntext;
 //!use ntext::to_text;
@@ -18,8 +17,9 @@
 //!     assert_eq!(to_text!(34123, &Formatting::with_seperator("#").capitalize()),"Thirty#Four#Thousand#One#Hundred#Twenty#Three");
 //!}
 //!```
-//! This macro will also return an empty string on input zero
-//! You can also create the Formatting struct manually
+//! This macro will also return an empty string on input zero  
+//! You can also create the Formatting struct manually  
+//! Source [ntext-rs](https://github.com/uttarayan21/ntext-rs)   
 
 mod formatting;
 mod numtext;
