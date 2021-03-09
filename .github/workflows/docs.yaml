@@ -1,0 +1,37 @@
+name: Documentation
+
+on:
+  push:
+    branches: [ master ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Install latest toolchain
+              uses: actions-rs/toolchain@v1
+              with:
+                  toolchain:stable
+                  default: true
+                  override: true
+            - name: Build Docs
+              run: cargo doc --color=always
+            - name: Copy docs 
+              run: |
+                  mv docs/index.html ./
+                  rm -rf docs
+                  cp -r target/doc ./docs
+                  mv index.html docs/
+            - name: Push changes
+              run: |
+                  git config --global user.name 'github-actions[bot]'
+                  git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+                  git add docs
+                  git commit -am "Generated docs from github-actions[bot]"
+                  git push

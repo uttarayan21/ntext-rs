@@ -1,4 +1,5 @@
 //! Example program with default formatting
+//! Source [ntext-rs](https://github.com/uttarayan21/ntext-rs)
 //!```rust
 //!extern crate ntext;
 //!use ntext::to_text;
