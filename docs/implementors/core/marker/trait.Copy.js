@@ -1,3 +1,0 @@
-(function() {var implementors = {};
-implementors["ntext"] = [{"text":"impl&lt;'format&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html\" title=\"trait core::marker::Copy\">Copy</a> for <a class=\"struct\" href=\"ntext/struct.Formatting.html\" title=\"struct ntext::Formatting\">Formatting</a>&lt;'format&gt;","synthetic":false,"types":["ntext::formatting::Formatting"]}];
-if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

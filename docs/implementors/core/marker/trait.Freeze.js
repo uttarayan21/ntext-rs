@@ -1,3 +1,0 @@
-(function() {var implementors = {};
-implementors["ntext"] = [{"text":"impl&lt;'format&gt; Freeze for <a class=\"struct\" href=\"ntext/struct.Formatting.html\" title=\"struct ntext::Formatting\">Formatting</a>&lt;'format&gt;","synthetic":true,"types":["ntext::formatting::Formatting"]}];
-if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

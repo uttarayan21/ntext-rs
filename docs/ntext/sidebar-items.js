@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["digit_to_text","Convert digit to words in a string."],["to_text_fmt","Convert usize to words in a string seperated by a seperator."]],"macro":[["to_text","Macro which supports both seperator and without it"]],"struct":[["Formatting","Set the formatting of the output  "]]});
