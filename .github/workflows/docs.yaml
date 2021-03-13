@@ -34,6 +34,6 @@ jobs:
                   cp -r target/doc ./docs
                   cp index.html docs/
 
-                  git commit -am "Auto Generated Documentation"
                   git add docs
+                  git commit -am "Auto Generated Documentation"
                   git push
