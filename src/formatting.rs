@@ -30,7 +30,7 @@ impl<'format> Formatting<'format> {
             tens_seperator: None,
         }
     }
-    /// With same formatting for all
+    /// With same formatting for all seperators
     pub fn with_seperator(seperator: &'format str) -> Self {
         Self {
             capitalize: false,

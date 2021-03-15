@@ -47,6 +47,12 @@ fn place_value(number: u8, place: u8, fmt: &Formatting) -> Option<String> {
             4 => buffer.push_str("Thousand"),
             5 => (), // Souldn't happen
             6 => buffer.push_str("Million"),
+            7 => (),
+            8 => (),
+            9 => buffer.push_str("Billion"),
+            10 => (),
+            11 => (),
+            12 => buffer.push_str("Trillion"),
             _ => (),
         };
     } else {
@@ -57,6 +63,12 @@ fn place_value(number: u8, place: u8, fmt: &Formatting) -> Option<String> {
             4 => buffer.push_str("thousand"),
             5 => (), // Souldn't happen
             6 => buffer.push_str("million"),
+            7 => (),
+            8 => (),
+            9 => buffer.push_str("billion"),
+            10 => (),
+            11 => (),
+            12 => buffer.push_str("trillion"),
             _ => (),
         }
     }
@@ -139,7 +151,7 @@ fn tens_place(tens: u8, ones: u8, fmt: &Formatting) -> Option<String> {
 pub fn to_text_fmt(number: usize, fmt: &Formatting) -> String {
     let mut numtext: String = String::new();
     let mut last: Option<u8> = None;
-    let tens_place_holders: [u8; 3] = [2, 5, 7];
+    let tens_place_holders: [u8; 4] = [2, 5, 7, 10];
     let digits: Vec<u8> = number
         .to_string()
         .chars()
